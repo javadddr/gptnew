@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
 import logo from "./assets/logo5.png";
+import logo2 from "./assets/d4.png";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -44,8 +45,8 @@ console.log(isMenuOpen)
   };
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} isBordered  isMenuOpen={isMenuOpen} >
-      <NavbarContent>
+    <Navbar onMenuOpenChange={setIsMenuOpen} isBordered  isMenuOpen={isMenuOpen}  >
+      <NavbarContent >
       <NavbarMenuToggle
   aria-label={isMenuOpen ? "Close menu" : "Open menu"}
   className="sm:hidden dark"
@@ -53,13 +54,13 @@ console.log(isMenuOpen)
 />
 
 
-        <NavbarBrand>
-          <img src={logo} alt="Logo" className="h-6 w-6 mr-1" />
-          <p className="font-bold text-indigo-1200 ">DYNAMOFLEET</p>
+        <NavbarBrand className="-ml-26  mr-20" >
+          <img src={logo2} alt="logo2" className="h-8 w-8 mr-1" />
+          <p className="font-bold text-indigo-1200 ">Global<span className="text-green-600">Package</span>Tracker</p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-14" justify="center">
         <NavbarItem>
           <Link className="font-light text-inherit hover:text-blue-600" to="/" onClick={() => { trackAction('Home-navClick')}}>Home</Link>
         </NavbarItem>
@@ -69,10 +70,19 @@ console.log(isMenuOpen)
         <NavbarItem>
           <Link className="font-light text-inherit hover:text-blue-600" to="/contact"  onClick={() => { trackAction('Contact')}}>Contact</Link>
         </NavbarItem>
-        <div className="border-l border-gray-300 h-8 mx-1"></div>
         <NavbarItem>
-          <a className="font-light text-inherit hover:text-blue-600" href="/learn"  rel="noopener noreferrer" onClick={() => { trackAction('Learn more')}}>Learn more</a>
+          <Link className="font-light text-inherit hover:text-blue-600" to="/couriers"  onClick={() => { trackAction('Couriers')}}>Couriers</Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link className="font-light text-inherit hover:text-blue-600" to="/excel"  onClick={() => { trackAction('Excel')}}>Try Excel</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="font-light text-inherit hover:text-blue-600" to="/google"  onClick={() => { trackAction('Google')}}>Try Google Sheets</Link>
+        </NavbarItem>
+        <div className="border-l border-gray-300 h-8 mx-1"></div>
+        {/* <NavbarItem>
+          <a className="font-light text-inherit hover:text-blue-600" href="/learn"  rel="noopener noreferrer" onClick={() => { trackAction('Learn more')}}>Learn more</a>
+        </NavbarItem> */}
       </NavbarContent>
 
       <NavbarContent justify="end">

@@ -6,7 +6,8 @@ import HomeB1 from "./HomeB1";
 import HomeB2 from "./HomeB2";
 import Hero2 from "./Hero2";
 import Pricing from "./Pricing";
-
+import HomePro from "./HomePro";
+import HomePro2 from "./HomePro2";
 import HomeB3 from "./HomeB3";
 import HomeB4 from "./HomeB4";
 import logo11 from "./assets/pw.jpeg"
@@ -61,8 +62,8 @@ export default function Home() {
   
 <Hero2/>
 
-
-
+<HomePro/>
+<HomePro2/>
 
       {/* <div className={`flex justify-center relative ${isLoaded ? 'animate-fadeIn' : 'opacity-0'}`}>
         <div className=" max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8 pt-6 pb-6 flex justify-center items-center">
@@ -141,10 +142,10 @@ export default function Home() {
       </div> */}
 
       <HomeB/>
-      <HomeB1/>
-    
-      <HomeB3/>
-      <HomeB4/>
+      {/* <HomeB1/> */}
+{/*     
+      <HomeB3/> */}
+      {/* <HomeB4/> */}
       <Pricing/>
      
       

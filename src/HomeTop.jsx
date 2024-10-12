@@ -29,8 +29,8 @@ export default function HomeTop() {
   };
   useEffect(() => {
     const options = {
-      strings: ['fleet', 'vehicles', 'drivers'],
-      typeSpeed: 280,
+      strings: [' Web App', 'MS Excel', 'Google Sheet'],
+      typeSpeed: 180,
       backSpeed: 180,
       loop: true,
     };
@@ -45,10 +45,10 @@ export default function HomeTop() {
   return (
   
    
-       <div className={`relative  isolate px-6 pt-14 lg:px-8 ${isLoaded ? 'animate-fadeIn' : 'opacity-0'}`}>
+       <div className={`relative   isolate px-6 pt-14 lg:px-8 ${isLoaded ? 'animate-fadeIn' : 'opacity-0'}`}>
         <div
           aria-hidden="true"
-          className="absolute  inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 "
+          className="absolute dark inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 "
         >
           <div
             style={{
@@ -58,21 +58,29 @@ export default function HomeTop() {
             className="relative  left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="mx-auto max-w-2xl py-16 sm:py-20 lg:py-10">
+        <div className="mx-auto max-w-4xl py-16 sm:py-20 lg:py-10">
          
           <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-600 sm:text-6xl custom-font">
-        Manage and monitor every aspect of your <br></br> <span id="typed" className="text-blue-400"></span>.
+          <h1 className="mx-auto mt-2  text-pretty text-center text-4xl font-medium tracking-tight text-gray-950 sm:text-5xl">
+        Track and monitor all of your packages from +2000 carriers worldwide in one place in  <br></br> <span id="typed" className="text-blue-400 font-bold"></span>.
       </h1>
 
             <p className="mt-6 text-base leading-8 text-gray-600">
-            DynamoFleet is the ideal fleet management software, providing comprehensive solutions to manage both your vehicles and drivers. Enhance cost efficiency, and assume full control over your fleet management.
+            Use our intuitive Webapp and Spreadsheet Add-Ins to
+monitor shipments from over 2,000 couriers.
+ Excel and Google Sheets Add-Ins
+
+ Centralized Data Management
+
+ Customized Dashboards
+
+ Data Transfer to your Business Tools
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
               color="primary"
               variant="flat"
-              className="shadow-2xl border border-indigo-600"
+              className="shadow-2xl  border border-indigo-600"
               as="a"
               href="https://www.app.dynamofleet.com/register"
               target="_blank" // optional, to open in a new tab
@@ -84,7 +92,13 @@ export default function HomeTop() {
 
             
             <a href="/learn" className="text-sm font-semibold leading-6 text-gray-900"  onClick={() => { trackAction(' Learn more-Hero')}}>
-            Learn more <span aria-hidden="true">→</span>
+            <Button
+            color="warning"
+            variant="flat"
+            className="shadow-2xl font-bold border border-yellow-600"
+            >
+            Book a Demo / Meeting 
+            </Button>
             </a>
 
             </div>
