@@ -2,20 +2,14 @@ import React, { useEffect, useState } from "react";
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 import HomeTop from "./HomeTop";
 import HomeB from "./HomeB";
-import HomeB1 from "./HomeB1";
-import HomeB2 from "./HomeB2";
+
 import Hero2 from "./Hero2";
 import Pricing from "./Pricing";
 import HomePro from "./HomePro";
 import HomePro2 from "./HomePro2";
-import HomeB3 from "./HomeB3";
-import HomeB4 from "./HomeB4";
-import logo11 from "./assets/pw.jpeg"
-import logo12 from "./assets/pw1.jpeg"
-import logo13 from "./assets/pw2.jpeg"
-import logo14 from "./assets/pw3.jpeg"
-import logo15 from "./assets/pw4.jpeg"
-import logo16 from "./assets/pw5.jpeg"
+
+import GetStarted from "./GetStarted";
+
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -146,6 +140,28 @@ export default function Home() {
 {/*     
       <HomeB3/> */}
       {/* <HomeB4/> */}
+      <GetStarted
+      steps={[
+        {
+          stepNumber: 1,
+          heading: "Register for Free",
+          text: "Create an account with your email and password to test 10 free trackings.",
+          
+        },
+        {
+          stepNumber: 2,
+          heading: "Visit our Web-App",
+          text: "Go to our Web Application and log in to your account.",
+         
+        },
+        {
+          stepNumber: 3,
+          heading: "Start Tracking",
+          text: "Begin tracking shipments directly in your sheets using our formulas.",
+         
+        },
+      ]}
+    />
       <Pricing/>
      
       

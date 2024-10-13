@@ -4,14 +4,14 @@ import { Tabs, Tab, Button } from "@nextui-org/react";
 
 const includedFeatures = [
   'Microsoft Excel Add-in.',
-  'Google Spreadsheets Addon.',
+  'Google Spreadsheets Add-on.',
   'Webapplication Access.',
   'Comprehensive Dashboard.',
   'Shipment Alerts.',
   'Notify your customers.',
   'Observe shipping costs.',
   'Manage your vendors.',
-  'Manage your locations.',
+  'Manage your hubs.',
 
 ];
 
@@ -39,13 +39,13 @@ const shipmentPlans2 = [
 
 const onetime = [
   { shipments: 600, price: 0.45, billing: 'onetime' },
-  { shipments: 1200, price: 0.12, billing: 'onetime' },
-  { shipments: 3000, price: 0.11, billing: 'onetime' },
-  { shipments: 6000, price: 0.10, billing: 'onetime' },
-  { shipments: 12000, price: 0.09, billing: 'onetime' },
-  { shipments: 30000, price: 0.08, billing: 'onetime' },
-  { shipments: 60000, price: 0.07, billing: 'onetime' },
-  { shipments: 120000, price: 0.06, billing: 'onetime' },
+  { shipments: 1200, price: 0.40, billing: 'onetime' },
+  { shipments: 3000, price: 0.35, billing: 'onetime' },
+  { shipments: 6000, price: 0.30, billing: 'onetime' },
+  { shipments: 12000, price: 0.25, billing: 'onetime' },
+  { shipments: 30000, price: 0.20, billing: 'onetime' },
+  { shipments: 60000, price: 0.15, billing: 'onetime' },
+  { shipments: 120000, price: 0.10, billing: 'onetime' },
 ];
 
 export default function Pricing() {
@@ -174,9 +174,10 @@ export default function Pricing() {
                     <Tab key="ontime" title="On Time" />
                   </Tabs>
 
-                  {/* Monthly and Annually Plans */}
+                 { (selectedKey === "monthly" || selectedKey === "annually") && "Choose Your Plan:"}
                   {(selectedKey === "monthly" || selectedKey === "annually") && (
-                    <div className="grid grid-cols-2 gap-4 mt-5">
+                    <div className="grid grid-cols-2 gap-2 mt-5 ">
+                   
                       {activePlans.map((plan) => (
                         <Button
                           key={plan.shipments}
@@ -191,6 +192,8 @@ export default function Pricing() {
                           {plan.shipments} Shipments<br />{plan.price}$ /{plan.billing}
                         </Button>
                       ))}
+
+
                     </div>
                   )}
 
@@ -202,13 +205,13 @@ export default function Pricing() {
                         Minimum amount is 600 shipments.
                       </label>
                       <input
-  type="number"
-  value={shipmentsInput}
-  onChange={handleShipmentsInputChange}
-  className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-  placeholder="Enter number of shipments"
+                          type="number"
+                          value={shipmentsInput}
+                          onChange={handleShipmentsInputChange}
+                          className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                          placeholder="Enter number of shipments"
 
-/>
+                        />
 
                       {matchedPrice ? (
                         <p className="mt-3 text-sm text-indigo-600">
@@ -216,24 +219,19 @@ export default function Pricing() {
                          <br></br> <br></br><span className="mt-7 pt-6 text-sm text-gray-400">You have one year to use these shipments. After that, any unused shipments will expire.</span>
                         </p>
                       ) : (
-                        <Button color='success' variant='flat' radius="sm" className="mt-3 text-md text-gray-800">
+                        <Button color='success' variant='flat' radius="sm" className={`mt-3 text-md text-gray-800 ${shipmentsInput>1000?"":"hidden"}`}>
                         {shipmentsInput>1000?"Contact us!":""} 
                         </Button>
                       )}
                     </div>
                   )}
-
-                  <Button
-                    className="text-white mt-10"
-                    color='primary'
-                    radius="sm"
-                    variant="shadow"
-                    onPress={() => {
+        
+             
+                  <Button  onPress={() => {
                       trackAction('Upgrade to Premium');
-                    }}
-                  >
-                    You need to register first!
-                  </Button>
+                    }} color="danger" variant="flat" href="https://ant.design" target="_blank" style={{width:"250px",marginTop:"50px"}}>
+                  You need to register first!
+            </Button>
                 </div>
               </div>
             </div>

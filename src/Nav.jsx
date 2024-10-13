@@ -73,12 +73,7 @@ console.log(isMenuOpen)
         <NavbarItem>
           <Link className="font-light text-inherit hover:text-blue-600" to="/couriers"  onClick={() => { trackAction('Couriers')}}>Couriers</Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link className="font-light text-inherit hover:text-blue-600" to="/excel"  onClick={() => { trackAction('Excel')}}>Try Excel</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="font-light text-inherit hover:text-blue-600" to="/google"  onClick={() => { trackAction('Google')}}>Try Google Sheets</Link>
-        </NavbarItem>
+      
         <div className="border-l border-gray-300 h-8 mx-1"></div>
         {/* <NavbarItem>
           <a className="font-light text-inherit hover:text-blue-600" href="/learn"  rel="noopener noreferrer" onClick={() => { trackAction('Learn more')}}>Learn more</a>
