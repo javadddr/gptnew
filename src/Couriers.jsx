@@ -55,28 +55,35 @@ const totalPages = filteredCouriers.length === 0 ? 1 : Math.ceil(filteredCourier
   }, [filteredCouriers]);
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-4xl mx-auto p-6">
       <h2 className="text-3xl font-bold mb-4 text-center">2,000+ Supported Couriers</h2>
       <p className="mb-6 text-gray-600 text-center">
         In the list below, you can find all supported couriers. For our spreadsheet Add-Ins, click on any courier below to see how to use the corresponding courier code.
       </p>
 
-      {/* Search Input */}
       <Input
-        clearable
-        placeholder="Search Courier..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        bordered={false}
-        className='mb-5'
-        css={{ marginBottom: '1.5rem', paddingTop: '0.5rem',border:"none" }}
-      />
+                        name="password"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        placeholder="Search Courier..."
+                        color="secondary"
+                        className="max-w-xs mb-4"
+                        style={{
+                          backgroundColor: "transparent",
+                          border: "none",
+                          outline: "none",
+                          boxShadow: "none",
+                          color: 'black',
+                      
+                        }}
+                      />
+     
 
       {/* NextUI Table */}
       <Table aria-label="Supported Couriers Table" css={{ borderCollapse: 'collapse', width: '100%' }}>
         <TableHeader>
           <TableColumn>Courier Name</TableColumn>
-          <TableColumn>Courier Code</TableColumn>
+          <TableColumn>Courier Code (Click on them to copy)</TableColumn>
         </TableHeader>
         <TableBody>
           {currentCouriers.length > 0 ? (

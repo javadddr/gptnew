@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import {Button} from "@nextui-org/react";
 import "./PrivacyPolicy.css"
 import Typed from 'typed.js';
+import RegisterM from "./RegisterM";
 export default function HomeTop() {
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
 
+  const openSignUpModal = () => setIsSignUpModalOpen(true);
+  const closeSignUpModal = () => setIsSignUpModalOpen(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-
+const title="Sign Up Now"
   useEffect(() => {
     setIsLoaded(true);
   }, []);
@@ -77,21 +82,12 @@ monitor shipments from over 2,000 couriers.
  Data Transfer to your Business Tools
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button
-              color="primary"
-              variant="flat"
-              className="shadow-2xl  border border-indigo-600"
-              as="a"
-              href="https://www.app.dynamofleet.com/register"
-              target="_blank" // optional, to open in a new tab
-              rel="noopener noreferrer" // optional, for security reasons
-              onClick={() => { trackAction('Sign Up-Hero')}}
-            >
-              Sign Up Now
-            </Button>
+                   <RegisterM isOpen={isSignUpModalOpen} onClose={closeSignUpModal} title={title} borderi={true} colori={"primary"}/>
+         
 
             
-            <a href="/learn" className="text-sm font-semibold leading-6 text-gray-900"  onClick={() => { trackAction(' Learn more-Hero')}}>
+            <a href="https://calendly.com/globalpackagetracker/demo" className="text-sm font-semibold leading-6 text-gray-900"  onClick={() => { trackAction(' Learn more-Hero')}}>
+              
             <Button
             color="warning"
             variant="flat"
@@ -116,7 +112,7 @@ monitor shipments from over 2,000 couriers.
             className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
           />
         </div>
-
+   
         
       </div>
   

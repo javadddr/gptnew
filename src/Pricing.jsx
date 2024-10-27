@@ -1,7 +1,7 @@
 import { CheckIcon } from '@heroicons/react/20/solid';
 import React, { useEffect, useState } from "react";
 import { Tabs, Tab, Button } from "@nextui-org/react";
-
+import RegisterM from "./RegisterM";
 const includedFeatures = [
   'Microsoft Excel Add-in.',
   'Google Spreadsheets Add-on.',
@@ -54,7 +54,12 @@ export default function Pricing() {
   const [selectedPlan, setSelectedPlan] = useState(30000); 
   const [shipmentsInput, setShipmentsInput] = useState('');
   const [matchedPrice, setMatchedPrice] = useState(null);
-
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+  const colori="danger"
+    const openSignUpModal = () => setIsSignUpModalOpen(true);
+    const closeSignUpModal = () => setIsSignUpModalOpen(false);
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const title="Register for free"
   useEffect(() => {
     setIsLoaded(true);
   }, []);
@@ -226,12 +231,9 @@ export default function Pricing() {
                     </div>
                   )}
         
-             
-                  <Button  onPress={() => {
-                      trackAction('Upgrade to Premium');
-                    }} color="danger" variant="flat" href="https://ant.design" target="_blank" style={{width:"250px",marginTop:"50px"}}>
-                  You need to register first!
-            </Button>
+             <div className='mt-10'>
+        <RegisterM isOpen={isSignUpModalOpen} onClose={closeSignUpModal} title={title} borderi={false} colori={colori}/>
+        </div>
                 </div>
               </div>
             </div>

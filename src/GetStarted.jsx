@@ -1,11 +1,18 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Card, Button } from "@nextui-org/react";
 const subheading="How to start?"
 const heading="Get Started in 3 Easy Steps."
-
+import RegisterM from "./RegisterM";
 const text=" Follow these simple steps to begin tracking shipments quickly."
 
 export default function GetStarted({ steps }) {
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+  const colori="danger"
+    const openSignUpModal = () => setIsSignUpModalOpen(true);
+    const closeSignUpModal = () => setIsSignUpModalOpen(false);
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+  const title=" Get Started"
   return (
     <section className="py-12 md:py-20 bg-gray-50 mx-auto px-6 lg:px-24 ">
      
@@ -39,10 +46,8 @@ export default function GetStarted({ steps }) {
         ))}
       </div>
 
-      <div className="flex justify-center mt-12">
-      <Button color="danger" variant="flat" href="https://ant.design" target="_blank" style={{width:"400px"}}>
-              Get Started
-            </Button>
+      <div className="flex justify-center mt-12 w-[300px">
+      <RegisterM isOpen={isSignUpModalOpen} onClose={closeSignUpModal} title={title} borderi={false} colori={colori}/>
       </div>
     </section>
   );

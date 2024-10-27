@@ -5,10 +5,16 @@ import Typed from 'typed.js';
 import logo130 from "./assets/dash12.png";
 import { PlayCircleTwoTone } from "@ant-design/icons";
 import { Card, Typography } from 'antd';
-
+import RegisterM from "./RegisterM";
 export default function HomePro() {
 
-
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+const colori="danger"
+  const openSignUpModal = () => setIsSignUpModalOpen(true);
+  const closeSignUpModal = () => setIsSignUpModalOpen(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+const title=" Get Started"
   const trackAction = async (actionName) => {
     try {
       const response = await fetch('https://api.dynamofleet.com/dywebsite/trackAction', {
@@ -85,9 +91,11 @@ export default function HomePro() {
               </div>
             </Typography.Text>
             
-            <Button color="danger" variant="flat" href="https://ant.design" target="_blank">
-              Get Started
-            </Button>
+
+              
+                <RegisterM isOpen={isSignUpModalOpen} onClose={closeSignUpModal} title={title} borderi={false} colori={colori}/>
+           
+
           </div>
         </div>
       </Card>

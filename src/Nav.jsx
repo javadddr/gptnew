@@ -6,7 +6,7 @@ import logo2 from "./assets/d4.png";
 import RegisterM from "./RegisterM";
 export default function Nav() {
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
-
+const title="Sign up"
   const openSignUpModal = () => setIsSignUpModalOpen(true);
   const closeSignUpModal = () => setIsSignUpModalOpen(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -113,7 +113,7 @@ console.log(isMenuOpen)
         
         ))}
       </NavbarMenu>
-      <RegisterM isOpen={isSignUpModalOpen} onClose={closeSignUpModal} />
+      <RegisterM isOpen={isSignUpModalOpen} onClose={closeSignUpModal} title={title}  borderi={false} colori={"primary"}/>
     </Navbar>
   );
 }

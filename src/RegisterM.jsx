@@ -16,7 +16,7 @@ import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function RegisterM() {
+export default function RegisterM({title,borderi,colori}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [form, setForm] = useState({ email: "", password: "", confirmPassword: "" });
   const [isSubmitting, setSubmitting] = useState(false);
@@ -113,17 +113,19 @@ export default function RegisterM() {
     "Product Hunt",
    
   ];
-
+console.log("colori",colori)
   return (
     <>
-      <Button color="primary" variant="flat" onPress={onOpen}>
-        Sign Up
+      <Button color={colori}
+              variant="flat"
+              className={`shadow-2xl ${borderi?"border border-indigo-600":""} `} onPress={onOpen}>
+       {title}
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onClose}>
-        <ModalContent className="pr-0 flex flex-col w-full justify-center items-center h-[570px] pt-4 bg-gray-200">
+        <ModalContent className="pr-0 flex flex-col  w-[370px] justify-center items-center h-[570px] pt-4 bg-gray-50">
           {(onClose) => (
             <>
-              <ModalBody className="overflow-hidden w-[370px] ">
+              <ModalBody className="overflow-hidden ">
                 <Tabs
                   fullWidth
                   size="md"
@@ -229,7 +231,7 @@ export default function RegisterM() {
                         variant="flat"
                         disabled={isSubmitting}
                         onPress={submit}
-                        className="shadow-2xl border border-indigo-600"
+                        className={`shadow-2xl border border-indigo-600 `}
                       >
                         {isSubmitting ? "Registering..." : "Register"}
                       </Button>
@@ -241,7 +243,7 @@ export default function RegisterM() {
           )}
         </ModalContent>
       </Modal>
-      <ToastContainer />
+      <ToastContainer style={{ position: 'fixed', zIndex: 9999 }} />
     </>
   );
 }
