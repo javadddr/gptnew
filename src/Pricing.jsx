@@ -164,8 +164,8 @@ export default function Pricing() {
 
             {/* New Input Section for One-time Plan */}
             <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-              <div className="rounded-2xl shadow-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
-                <div className="mx-auto max-w-sm px-8">
+              <div className="rounded-2xl shadow-2xl bg-gray-50 min-h-[550px] py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-start lg:py-16">
+                <div className=" mx-9 max-w-sm px-1">
                   <Tabs
                     aria-label="Options"
                     color="primary"
@@ -189,9 +189,9 @@ export default function Pricing() {
                           radius="sm"
                           variant="flat"
                           color={selectedPlan === plan.shipments ? "primary" : "default"}
-                          className="pt-5 pb-5"
-                          size="sm"
-                          style={{ fontSize: 12, width: 120 }}
+                          className="p-4"
+                          size="lg"
+                          style={{ fontSize: 15, width: 170,height:60 }}
                           onClick={() => handleSelectPlan(plan.shipments)}
                         >
                           {plan.shipments} Shipments<br />{plan.price}$ /{plan.billing}
