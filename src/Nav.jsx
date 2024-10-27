@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
 import logo from "./assets/logo5.png";
 import logo2 from "./assets/d4.png";
-
+import RegisterM from "./RegisterM";
 export default function Nav() {
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+
+  const openSignUpModal = () => setIsSignUpModalOpen(true);
+  const closeSignUpModal = () => setIsSignUpModalOpen(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const navigate = useNavigate();
   const trackAction = async (actionName) => {
@@ -82,13 +86,9 @@ console.log(isMenuOpen)
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <a className="font-light text-inherit hover:text-blue-600 text-blue-600/100" href="https://www.app.dynamofleet.com/login" target="_blank" rel="noopener noreferrer" onClick={() => { trackAction('Login-Nav')}}>Login</a>
+          <a className="font-light text-inherit hover:text-blue-600 text-blue-600/100" href="https://app.globalpackagetracker.com/login" target="_blank" rel="noopener noreferrer" onClick={() => { trackAction('Login-Nav')}}>Login</a>
         </NavbarItem>
-        <NavbarItem>
-          <Button as="a" color="primary" href="https://www.app.dynamofleet.com/register" variant="flat" target="_blank" rel="noopener noreferrer" onClick={() => { trackAction(' Sign Up-Nav')}}>
-            Sign Up
-          </Button>
-        </NavbarItem>
+     
       </NavbarContent>
 
       <NavbarMenu>
@@ -113,6 +113,7 @@ console.log(isMenuOpen)
         
         ))}
       </NavbarMenu>
+      <RegisterM isOpen={isSignUpModalOpen} onClose={closeSignUpModal} />
     </Navbar>
   );
 }

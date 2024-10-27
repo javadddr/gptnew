@@ -1,15 +1,37 @@
 import React from 'react';
 import { Card, Button } from "@nextui-org/react";
+const subheading="How to start?"
+const heading="Get Started in 3 Easy Steps."
+
+const text=" Follow these simple steps to begin tracking shipments quickly."
 
 export default function GetStarted({ steps }) {
   return (
     <section className="py-12 md:py-20 bg-gray-50 mx-auto px-6 lg:px-24 ">
-      <div className="text-center mb-12 m-10">
-        <h2 className="text-4xl font-bold mb-4">Get Started in 3 Easy Steps</h2>
-        <p className="text-lg text-gray-600">
-          Follow these simple steps to begin tracking shipments quickly.
-        </p>
+     
+     <section className="py-6 md:py-8 lg:py-12 xl:py-20" >
+      <div className="container mx-auto">
+        <div className="flex flex-col justify-center items-center text-center">
+          {subheading && (
+            <p className="text-primary uppercase m-0">
+              {subheading}
+            </p>
+          )}
+          {heading && (
+            <h1 className="font-extrabold leading-tight text-4xl md:text-5xl lg:text-6xl">
+              {heading}
+            </h1>
+          )}
+          {text && (
+            <p className="mt-2 text-lg pl-52 pr-52">
+              {text}
+            </p>
+          )}
+    
+        </div>
       </div>
+   
+    </section>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
         {steps.map((step, index) => (

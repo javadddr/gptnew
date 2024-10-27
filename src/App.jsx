@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import Home from "./Home";
 import Contact from "./Contact";
 import Pricing from "./Pricing";
+import Couriers from "./Couriers";
 import Footer from "./Footer";
 import LegalNotice from './LegalNotice';
 import PrivacyPolicy from './PrivacyPolicy';
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/couriers" element={<Couriers />} />
         <Route path="/legal-notice" element={<LegalNotice />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />

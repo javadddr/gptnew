@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 import HomeTop from "./HomeTop";
 import HomeB from "./HomeB";
-
+import ChagePass from "./ChagePass";
 import Hero2 from "./Hero2";
 import Pricing from "./Pricing";
 import HomePro from "./HomePro";
 import HomePro2 from "./HomePro2";
-
+import Sectionthree from "./Sectionthree";
 import GetStarted from "./GetStarted";
 
 
@@ -162,6 +162,8 @@ export default function Home() {
         },
       ]}
     />
+    <ChagePass/>
+    <Sectionthree/>
       <Pricing/>
      
       
